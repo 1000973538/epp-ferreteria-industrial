@@ -14,11 +14,6 @@
 
 ### HU-02. Catálogo de productos
 **Como:** cliente.  
-**Quiero:** consultar un catálogo de productos de EPP y ferretería.  
-**Para:** conocer los productos disponibles.
-
-**Criterios de aceptación:**
-- Mostrar imágenes de los productos.
 - Presentar nombres y categorías.
 - Facilitar la consulta del catálogo.
 
