@@ -14,12 +14,15 @@ if(buscador){
 
             const nombre = producto.dataset.nombre;
 
+            // Comprobar si el nombre del producto contiene el texto ingresado 
             if(nombre.includes(texto)){
 
+                //Mostrar la tarjeta cuando coincide con la búsqueda.
                 producto.style.display = "block";
 
             }else{
 
+                // Ocultar la tarjeta cuando no coincide con la búsqueda.
                 producto.style.display = "none";
 
             }
@@ -30,37 +33,47 @@ if(buscador){
 
 }
 
-/* ========================= */
-/* FILTROS PRODUCTOS */
-/* ========================= */
+    /* ========================= */
+    /* FILTROS PRODUCTOS */
+    /* ========================= */
 
-const filtros = document.querySelectorAll(".filtro");
+    // Obtener todos los elementos que funcionan como filtros de categorías.
+    const filtros = document.querySelectorAll(".filtro");
 
-filtros.forEach(filtro => {
+    // Recorrer cada filtro para asignarle un evento de clic.
+    filtros.forEach(filtro => {
 
-    filtro.addEventListener("click", function(e){
+        // Detectar cuando el usuario selecciona una categoría.
+        filtro.addEventListener("click", function(e){
 
-        e.preventDefault();
+            // Evitar el comportamiento predeterminado del enlace.
+            e.preventDefault();
 
-        const categoria = filtro.dataset.filtro;
+            // Obtener la categoría asociada al filtro seleccionado. 
+            const categoria = filtro.dataset.filtro;
 
-        const productos = document.querySelectorAll(".producto-card");
+            // Obtener todas las tarjetas de productos disponibles.
+            const productos = document.querySelectorAll(".producto-card");
 
-        productos.forEach(producto => {
+            // Recorrer los productos para comparar sus categorías.
+            productos.forEach(producto => {
 
-            if(producto.dataset.categoria === categoria){
+                // Comprobar si el producto pertenece a la categoría seleccionada.
+                if(producto.dataset.categoria === categoria){
 
-                producto.style.display = "block";
+                    // Mostrar el producto cuando coincide con el filtro.
+                    producto.style.display = "block";
 
-            }else{
+                }else{
 
-                producto.style.display = "none";
+                    // Ocultar el producto cuando pertenece a otra categoría.
+                    producto.style.display = "none";
 
-            }
+                }
+
+            });
 
         });
 
     });
-
-});
 
